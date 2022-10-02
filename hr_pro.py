@@ -35,32 +35,37 @@ def main():
     managers = [manager_1.__str__(), manager_2.__str__(), manager_3.__str__()]
 
     print("Welcome to HR Pro\nQuestions:\n1. Show employees\n2. Show managers\n3. Add an employee\n4. Add a manager\n5. Exit")
-    option = int(input("What would you like to do? "))
-    if option == 1:
-        for employee in employees:
-            print(employee) 
-    elif option == 2:
-        for manager in managers:
-            print(manager)
-    elif option == 3:
-        name = input("Name: ")
-        age = int(input("Age: "))
-        salary = int(input("Salary: "))
-        employment_years = int(input("Employment years:"))
-        employee = Employee(name, age, salary, employment_years)
-        employees.append(employee.__str__())
-        print("Employee added successfully!")
-        print(f"{employee} was added.")
-    elif option == 4:
-        name = input("Name: ")
-        age = int(input("Age: "))
-        salary = int(input("Salary: "))
-        employment_years = int(input("Employment years:"))
-        bonus_percentage = int(input("Bonus Percentage: "))
-        manager = Manager(name, age, salary, employment_years, bonus_percentage)        
-        managers.append(manager.__str__())
-        print("Manager added successfully!")
-        print(f"{manager} was added.")
+    option = int(input("\nWhat would you like to do? "))
+    while not option == 5:
+        if option == 1:
+            for employee in employees:
+                print(employee) 
+            option = int(input("\nWhat would you like to do? "))
+        elif option == 2:
+            for manager in managers:
+                print(manager)
+            option = int(input("\nWhat would you like to do? "))
+        elif option == 3:
+            name = input("Name: ")
+            age = int(input("Age: "))
+            salary = int(input("Salary: "))
+            employment_years = int(input("Employment years:"))
+            employee = Employee(name, age, salary, employment_years)
+            employees.append(employee.__str__())
+            print("Employee added successfully!")
+            print(f"{employee} was added.")
+            option = int(input("\nWhat would you like to do? "))
+        elif option == 4:
+            name = input("Name: ")
+            age = int(input("Age: "))
+            salary = int(input("Salary: "))
+            employment_years = int(input("Employment years:"))
+            bonus_percentage = int(input("Bonus Percentage: "))
+            manager = Manager(name, age, salary, employment_years, bonus_percentage)        
+            managers.append(manager.__str__())
+            print("Manager added successfully!")
+            print(f"{manager} was added.")
+            option = int(input("\nWhat would you like to do? "))
 
     
 if __name__ == '__main__':
