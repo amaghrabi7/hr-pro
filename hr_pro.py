@@ -34,7 +34,7 @@ def main():
     manager_3 = Manager("Zain", 40, 5500, 16, 0.25)
     employees = [employee_1.__str__(), employee_2.__str__(), employee_3.__str__()]
     managers = [manager_1.__str__(), manager_2.__str__(), manager_3.__str__()]
-   
-
+    print("Welcome to HR Pro\nQuestions:\n1. Show employees\n2. Show managers\n3. Add an employee\n4. Add a manager\n5. Exit")
+    
 if __name__ == '__main__':
 	main()
